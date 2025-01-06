@@ -1,5 +1,5 @@
 const SHEET_ID = '1YFnfmaWgGu1lD06Q-xzWgPIt5BQUU7Ipp26dBdlfqpk'; // Вставьте ID вашей таблицы
-const API_KEY = 'AIzaSyCJOgV4PwEtxfcxuhTHR0lTKIvcC2cvzcE'; // Вставьте ваш Google API Key
+const API_KEY = ''; // Вставьте ваш Google API Key
 const URL = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Лист1?key=${API_KEY}`;
 
 fetch(URL)
