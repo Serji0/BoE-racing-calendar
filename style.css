@@ -1,13 +1,37 @@
+/* Устанавливаем фон страницы */
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  padding: 0;
+    background-color: #fbbd05;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
+
+/* Контейнер для содержимого */
+.content {
+    position: relative;
+    height: 100vh; /* Высота страницы */
+    display: flex;
+    justify-content: center; /* Горизонтальное выравнивание */
+    align-items: center; /* Вертикальное выравнивание */
+    flex-direction: column; /* Содержание по вертикали */
 }
-th, td {
-  padding: 10px;
-  text-align: left;
+
+/* Стиль для заголовка */
+.title {
+    font-size: 4em; /* Большой шрифт */
+    color: black;
+    font-weight: bold; /* Жирный шрифт */
+    margin: 0;
+}
+
+/* Иконка VK в правом верхнем углу */
+.vk-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.vk-icon img {
+    width: 40px; /* Размер иконки */
+    height: auto;
 }
