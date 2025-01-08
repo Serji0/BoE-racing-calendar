@@ -5,29 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be on Edge</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="script.js" defer></script>  <!-- Подключаем внешний JavaScript файл -->
+    <!-- Подключение Pikaday -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
 </head>
 <body>
 
-    <!-- Контейнер для содержимого -->
-    <div class="content">
-        <!-- Заголовок -->
-        <h1 class="title">Be on Edge</h1>
+    <!-- Заголовок -->
+    <h1 class="title">Be on Edge</h1>
 
-        <!-- Иконка VK в правом верхнем углу -->
-        <a href="https://vk.com/be_on_edge" target="_blank" class="vk-icon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/VKontakte_logo.svg/1024px-VKontakte_logo.svg.png" alt="VK Icon">
-        </a>
+    <!-- Чёрная полоска под заголовком -->
+    <div class="black-bar"></div>
+
+    <!-- Иконка VK в правом верхнем углу -->
+    <a href="https://vk.com/be_on_edge" target="_blank" class="vk-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/VK_Compact_Logo_%282021-present%29.svg" alt="VK Icon">
+    </a>
+
+    <!-- Место для вывода данных -->
+    <!-- Место для вывода данных -->
+    <!-- Фильтр по дате -->
+    <!-- Фильтр по дате (календарь) -->
+    <!-- Фильтр по дате -->
+    <div id="filter-container">
+        <button id="prev-date" class="date-button">←</button>
+        <input type="text" id="date-filter">
+        <button id="next-date" class="date-button">→</button>
     </div>
-    <!-- <table id="data-table" border="1">
-      <thead>
-        <tr>
-          <th>Колонка 1</th>
-          <th>Колонка 2</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>-->
-  <script src="script.js"></script>
-  
+
+    
+    <div id="sheet-data">
+        <!-- Таблицы будут вставляться сюда -->
+    </div>
+
 </body>
 </html>
