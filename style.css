@@ -1,9 +1,10 @@
-/* Устанавливаем фон страницы */
+/* Устанавливаем чёрный фон страницы */
 body {
-    background-color: #fbbd05;
+    background-color: black;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    color: #fbbd05; /* Текст на странице будет желтым */
 }
 
 /* Контейнер для содержимого */
@@ -11,27 +12,229 @@ body {
     position: relative;
     height: 100vh; /* Высота страницы */
     display: flex;
-    justify-content: center; /* Горизонтальное выравнивание */
-    align-items: center; /* Вертикальное выравнивание */
-    flex-direction: column; /* Содержание по вертикали */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Центрируем содержимое по вертикали */
 }
 
 /* Стиль для заголовка */
 .title {
     font-size: 4em; /* Большой шрифт */
-    color: black;
+    color: #fbbd05; /* Цвет текста желтый */
     font-weight: bold; /* Жирный шрифт */
     margin: 0;
+    text-align: center; /* Выравнивание по центру горизонтально */
+    padding-top: 50px; /* Отступ сверху, чтобы отдалить от верхней части */
+}
+
+/* Чёрная полоска под заголовком */
+.black-bar {
+    background-color: #333;
+    height: 5px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 /* Иконка VK в правом верхнем углу */
 .vk-icon {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 30px;
+    right: 30px;
+    margin: 30 px;
 }
 
 .vk-icon img {
     width: 40px; /* Размер иконки */
     height: auto;
+}
+
+#sheet-data {
+    margin-top: 20px;
+}
+
+/* Контейнер для фильтра по дате */
+#filter-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.date-button {
+    background-color: #333;
+    color: #fbbd05; /* Цвет текста на кнопках желтый */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 250px; /* Установите нужную ширину */
+}
+
+.date-button:hover {
+    background-color: #555;
+}
+
+#date-filter {
+    width: 250px;
+    margin: 0 10px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: #fbbd05; /* Цвет текста внутри инпута */
+    background-color: #333;
+    border: 1px solid #fbbd05;
+}
+
+/* Контейнер для таблицы */
+.table-wrapper {
+    margin-bottom: 20px;
+}
+
+.sheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sheet-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    color: #fbbd05; /* Цвет текста в таблице желтый */
+}
+
+.sheet-table tr:nth-child(even) {
+    background-color: #444;
+}
+
+.sheet-table tr:nth-child(odd) {
+    background-color: #333;
+}
+
+/* Контейнер для списка с границами того же цвета, что и текст */
+#list-container {
+    width: 75%; /* Контейнер занимает 75% ширины экрана */
+    max-height: 600px;
+    min-height: 400px;
+    max-width: 1200px;
+    overflow-y: auto; /* Прокрутка при необходимости */
+    border: 2px solid #fbbd05; /* Границы блока того же цвета, что и текст */
+    padding: 10px;
+    background-color: #333;
+    text-align: left; /* Выровнять текст по левому краю */
+    border-radius: 0; /* Прямые углы */
+    padding-left: 10px; /* Отступ слева для текста */
+    margin: 0 auto; /* Центрируем контейнер по горизонтали */
+}
+
+#list-container ul {
+    list-style-type: none; /* Убираем точки перед текстом */
+    padding: 0;
+    margin: 0;
+}
+
+#list-container li {
+    padding: 5px;
+    padding-top: 10px;
+    list-style-type: none; /* Убираем точки перед текстом */
+    cursor: pointer;
+    margin-bottom: 10px; /* Добавляем отступ снизу между элементами списка */
+    margin-top: 10px; /* Добавляем отступ снизу между элементами списка */
+    position: relative; /* Для работы с псевдоэлементом */
+}
+
+/* Контейнер строки в списке */
+.row-container {
+    display: flex;
+    justify-content: space-between; /* Разделяем на левую и правую колонку */
+    align-items: center; /* Вертикальное выравнивание текста */
+    width: 100%;
+}
+
+/* Левая колонка (значения из колонок 7, 9, 8) */
+.column-left {
+    text-align: left;
+    flex: 1; /* Заполняет все доступное пространство слева */
+    padding-right: 20px; /* Отступ справа для расстояния между колонками */
+}
+
+/* Правая колонка (значение из колонки 4) */
+.column-right {
+    text-align: right;
+    white-space: nowrap; /* Предотвращает перенос текста */
+    font-weight: bold; /* Жирный текст */
+    flex: 0; /* Колонка занимает ровно столько места, сколько нужно для текста */
+}
+
+/* Скрываем таблицы по умолчанию */
+.table-wrapper {
+    display: none;
+}
+/* Основной контейнер календаря */
+.pika-single {
+  width: 250px; /* Совпадает с шириной #date-filter */
+  margin: 0;
+  padding: 5px;
+}
+
+/* Внутренний календарь */
+.pika-lendar {
+  width: 100%; /* Устанавливаем ширину в 100% от родителя */
+  padding: 0; /* Убираем внутренние отступы */
+  margin: 0; /* Убираем внешние отступы */
+}
+
+/* Заголовок календаря */
+.pika-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #fbbd05;
+  padding: 5px;
+}
+
+/* Остальные стили остаются такими же */
+.pika-prev, .pika-next {
+  color: #fbbd05;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.pika-table th, .pika-table td {
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.event-name {
+  font-size: 16px; /* Размер шрифта для eventName */
+  font-weight: bold; /* Жирный текст */
+  color: #fbbd05; /* Цвет текста */
+}
+
+.audio-info {
+  font-size: 14px; /* Размер шрифта для audio */
+  font-style: italic; /* Курсивный текст */
+  color: #aaa; /* Цвет текста */
+  margin-left: 5px; /* Отступ между eventName и audio */
+}
+
+
+.ended {
+  background-color: #333; /* Тёмный фон */
+  opacity: 0.6;          /* Уменьшенная прозрачность
+  /*color: #aaa;           /* Текст светло-серого цвета */
+  /* pointer-events: none;  /* Отключение взаимодействия с элементом, если нужно */
+}
+
+.cancelled {
+  opacity: 0.6;          /* Уменьшенная прозрачность */
+  color: red !important;           /* Текст светло-серого цвета */
+  /* pointer-events: none;  /* Отключение взаимодействия с элементом, если нужно */
+}
+
+.links-container li{
+  display: block;
+  max-width: fit-content;
+  border-bottom: 2px solid #fbbd05;
 }
